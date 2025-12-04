@@ -1,3 +1,5 @@
+import os
+
 def day1_part1(directions):
     turn = 50
     ans = 0
@@ -33,7 +35,8 @@ def day1_part2(directions):
 
 
 if __name__ == "__main__":
-    with open("day1data", "r") as f:
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    with open(os.path.join(script_dir, "day1data"), "r") as f:
         data = [line.strip() for line in f.readlines()]
     
     print(day1_part1(data))

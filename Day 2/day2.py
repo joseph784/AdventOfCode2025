@@ -1,6 +1,6 @@
 from functools import reduce
 import collections
-
+import os
 
 def get_factors(n):
     return set(reduce(
@@ -63,9 +63,8 @@ def day2_part2(ranges):
 
 
 if __name__ == "__main__":
-    # print(factors(11))
-    with open("day2data", "r") as f:
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    with open(os.path.join(script_dir, "day2data"), "r") as f:
         data = [line.strip() for line in f.readlines()]
-    
-    # print(day2_part1(data))
+    print(day2_part1(data))
     print(day2_part2(data))
